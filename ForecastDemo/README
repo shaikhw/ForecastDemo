@@ -2,7 +2,7 @@ Weather Forecast Demo
 Getting Started
 I have uploaded the link to project which is created using NEON Eclipse IDE for development and testing purposes. The project is tested up and running on my local machine. 
 Prerequisites
-JDK 1.8, Maven, Junit 4.0
+JDK 1.8, Maven, Junit 4.0, H2 Database Jar 1.4.182
 Installing
 The project can be imported in Eclipse IDE. And can be setup as mentioned in prerequisites section. Junit test case can be run to check the provided input and expected output.And repeat
 Running the tests
@@ -11,6 +11,7 @@ Break down into end to end tests
 Give an example
 And coding style tests
 The test cases are written against few use cases. Weather forecast for tomorrow to know the hottest/ coolest city/ cities at different times in a day.
+Weather Forecast For No Cities supplied as input
 Weather Forecast For Tomorrow At 10 AM
 Weather Forecast For Tomorrow At 3 PM
 Weather Forecast For Tomorrow At 8 PM
@@ -20,3 +21,4 @@ Built With
 •	Maven - Dependency Management
 Authors
 •	Waseem Shaikh- Has about 12+ years of experience on Banking and Financial Services domain using Java/J2EE technologies.
+
