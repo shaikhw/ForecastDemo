@@ -3,7 +3,9 @@ package forecast.demo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.joda.time.DateTime;
@@ -21,13 +23,22 @@ public class ForecastDemoTest {
 	private ForecastCityService service;
 
 	@Before
-	public void init() {
+	public void init() throws SQLException {
 		dao = new ForecastDaoImpl();
 		service = new ForecastCityServiceImpl(dao);
 	}
 
 	@Test
-	public void testWeatherForcastForTommorowAtTenAm() {
+	public void testWeatherForcastForTommorowAtTenAmForNoCity() throws SQLException {
+		DateTime tomorrowTenAm = new DateTime(2019, 03, 17, 10, 00, 00);
+
+		List<City> citiesWithHottestWeatherAtTenAm = service.persistAndGetCitiesWithHottestWeatherAtTime(null,
+				tomorrowTenAm);
+		assertEquals(citiesWithHottestWeatherAtTenAm, Collections.EMPTY_LIST);
+	}
+
+	@Test
+	public void testWeatherForcastForTommorowAtTenAm() throws SQLException {
 		DateTime tomorrowTenAm = new DateTime(2019, 03, 17, 10, 00, 00);
 
 		List<City> cities = new ArrayList<>();
@@ -74,7 +85,7 @@ public class ForecastDemoTest {
 	}
 
 	@Test
-	public void testWeatherForcastForTommorowAtThreePm() {
+	public void testWeatherForcastForTommorowAtThreePm() throws SQLException {
 		DateTime tomorrowThreePm = new DateTime(2019, 03, 17, 15, 00, 00);
 
 		List<City> cities = new ArrayList<>();
@@ -121,7 +132,7 @@ public class ForecastDemoTest {
 	}
 
 	@Test
-	public void testWeatherForcastForTommorowAtEightPm() {
+	public void testWeatherForcastForTommorowAtEightPm() throws SQLException {
 		DateTime tomorrowEightPm = new DateTime(2019, 03, 17, 20, 00, 00);
 
 		List<City> cities = new ArrayList<>();
@@ -168,4 +179,5 @@ public class ForecastDemoTest {
 	}
 
 }
+
 
