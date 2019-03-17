@@ -1,0 +1,8 @@
+forecast\demo\Forecast.class
+forecast\demo\Weather.class
+forecast\demo\service\ForecastCityServiceImpl.class
+forecast\demo\repo\ForecastDaoImpl.class
+forecast\demo\City.class
+forecast\demo\repo\ForecastDao.class
+forecast\demo\ForecastDemoTest.class
+forecast\demo\service\ForecastCityService.class
